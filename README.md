@@ -1,7 +1,7 @@
 # fget
 > Download files using Go `net/http` and `io`
 
-"Dump" file downloader for the command line which will just download whatever
+"Dumb" file downloader for the command line which will just download whatever
 file you request.
 
 First draft version.

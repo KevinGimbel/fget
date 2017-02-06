@@ -37,14 +37,24 @@ func main() {
 		os.Exit(1)
 	}
 
+	httpClient := &http.Client{}
 	// match the file name
 	r := regexp.MustCompile(`[^\\/]+$`)
 	filename := r.FindStringSubmatch(os.Args[1])
 
-	response, err := http.Get(os.Args[1])
+	req, err := http.NewRequest("GET", os.Args[1], nil)
+
+	// response, err := http.Get(os.Args[1])
 
 	if err != nil {
 		log.Fatal(err)
+	}
+
+	req.Header.Set("User-Agent", "fget")
+	response, err := httpClient.Do(req)
+
+	if response.StatusCode > 400 {
+		log.Fatal("Unable to download file. Response: ", response.Status)
 	}
 
 	defer response.Body.Close()
