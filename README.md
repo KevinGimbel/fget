@@ -1,6 +1,8 @@
 # fget
 > Download files using Go `net/http` and `io`
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/kevingimbel/fget)](https://goreportcard.com/report/github.com/kevingimbel/fget)
+
 "Dumb" file downloader for the command line which will just download whatever
 file you request from an URL. Probably has lots of issues, e.g. it just dumps the content it receives into a file with the same name. For example, requesting a `index.php` file will create a `index.php` file with the content of the rendered page on your local machine. Consider the following example:
 
