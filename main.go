@@ -11,7 +11,7 @@ import (
 )
 
 var Log colog.Colog
-var version = "1.0.0"
+var version = "1.0.1"
 
 func init() {
 	config := make(map[string]string)
