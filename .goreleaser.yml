@@ -1,0 +1,19 @@
+builds:
+  - binary: goserve
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+archive:
+  replacements:
+    amd64: 64-bit
+    darwin: macOS
+ 
+brew:
+  github:
+    owner: kevingimbel
+    name: homebrew-tap
+  homepage: https://github.com/kevingimbel/fget
+  description: "Download files with go, similar to wget."
